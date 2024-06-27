@@ -28,15 +28,15 @@ import { ref, computed, onMounted, watch } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 import HotelCard from './HotelCard.vue'
-
+import type { Hotel } from '@/types/Hotel'
 import { useHotelStore } from '@/stores/useHotelStore'
 
 // Acesse a store do Pinia
 const hotelStore = useHotelStore()
 const router = useRouter()
 
-const hotels = ref([])
-const sortCriteria = ref('price') // Critério de ordenação padrão
+const hotels = ref<Hotel[]>([])
+const sortCriteria = ref<'price' | 'rating'>('price') // Critério de ordenação padrão
 
 const selectedHotelsCount = computed(() => hotelStore.selectedHotels.length)
 
@@ -50,12 +50,12 @@ const fetchHotels = async () => {
 }
 
 // Computed property para ordenar os hotéis com base no critério selecionado
-const sortedHotels = computed(() => {
+const sortedHotels = computed<Hotel[]>(() => {
   return [...hotels.value].sort((a, b) => {
     if (sortCriteria.value === 'price') {
       return a.price - b.price
     } else if (sortCriteria.value === 'rating') {
-      return b.rating - a.rating // Ordenação decrescente para avaliações
+      return parseFloat(b.rating) - parseFloat(a.rating) // Ordenação decrescente para avaliações
     }
     return 0
   })

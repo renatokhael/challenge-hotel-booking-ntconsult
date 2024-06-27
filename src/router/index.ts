@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import CompareView from '../views/CompareView.vue'
+import HomeView from '@/views/HomeView.vue'
+import CompareView from '@/views/CompareView.vue'
 import HotelBooking from '@/views/HotelBooking.vue'
 
 const router = createRouter({
