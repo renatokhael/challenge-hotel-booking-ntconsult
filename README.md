@@ -1,15 +1,25 @@
 # Desafio Front-End Vue.js - Hotel Booking
 
+![Vue.js](https://img.shields.io/badge/vue-3.4.29-green)
+![Typescript](https://img.shields.io/badge/typescript-5.4.2-green)
+![Pinia](https://img.shields.io/badge/pinia-2.1.7-blue)
+![Vue-Router](https://img.shields.io/badge/vue--router-4.3.3-green)
+
 Esta é uma aplicação desenvolvida usando Vue.js, para simular parte do sistema de reserva de hotéis. O foco é implementar uma interface funcional que permita pesquisar, comparar e reservar hotéis.
 
 <img src=".github/screenshot.png">
 
 ## Conteúdo
 
+- [Introdução](#introdução)
 - [Requisitos](#requisitos)
 - [Funcionalidades](#funcionalidades)
 - [Rodar localmente](#uso)
 - [Testes](#testes)
+
+## Introdução
+
+Para este projeto, optei por usar Single-File Components, usando Composition API para um código mais modular e indepenente entre os componentes. Para gerenciamento de estado, estou utilizando o Pinia, e Vue-Router para roteamento das paginas.
 
 ## Requisitos
 
