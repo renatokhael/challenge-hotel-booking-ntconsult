@@ -1,7 +1,7 @@
 :root {
   --color-background-header: #003b95;
   --color-text-dark: #f4f4f4;
-  --color-button-background: #ff6b08;
+  --color-button-background: #003b95;
   --color-text: ##1a1a1a;
   --color-background: #f2f2f2;
 
@@ -54,4 +54,35 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  background-color: var(--color-button-background);
+  color: var(--color-text-dark);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0;
+  height: 48px;
+  width: 100%;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #007bff;
+}
+
+select,
+input:not([type='file' i], [type='image' i], [type='checkbox' i], [type='radio' i]) {
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  height: 48px;
+  background: #f4f4f4;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
 }

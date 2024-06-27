@@ -1,14 +1,15 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
 import HeaderComponent from './components/HeaderComponent.vue'
-import HeroSection from './components/HeroSection.vue'
 
-
+import SearchHotel from './components/SearchHotel.vue'
+import HotelList from './components/HotelList.vue'
 </script>
 
 <template>
   <HeaderComponent />
-  <HeroSection />
+  <SearchHotel />
+
   <RouterView />
 </template>
 

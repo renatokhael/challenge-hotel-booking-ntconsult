@@ -1,4 +1,4 @@
-# desafio-frontend-vuejs
+# Desafio Front-End Vue.js - Hotel Booking
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -14,10 +14,30 @@ TypeScript cannot handle type information for `.vue` imports by default, so we r
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Rodando a aplicação local
 
-```sh
+Baixe o repositório
+
+```
+git clone https://github.com/renatokhael/challenge-hotel-booking-ntconsult
+```
+
+Instale as dependencias
+
+```
 npm install
+```
+
+Rode o servidor mock
+
+```
+npm run server
+```
+
+E por fim, rode a aplicação
+
+```
+npm run dev
 ```
 
 ### Compile and Hot-Reload for Development

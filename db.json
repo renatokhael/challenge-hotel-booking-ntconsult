@@ -1,0 +1,94 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Copacabana Palace",
+      "city": "Rio de Janeiro",
+      "availableDate": "2023-07-15",
+      "price": 1200,
+      "rating": "9.2",
+      "ratingText": "Excepcional · 3.761 avaliações"
+    },
+    {
+      "id": 2,
+      "name": "Hotel Fasano",
+      "city": "São Paulo",
+      "availableDate": "2023-07-20",
+      "price": 980,
+      "rating": "9.0",
+      "ratingText": "Excepcional · 2.485 avaliações"
+    },
+    {
+      "id": 3,
+      "name": "Belmond Hotel das Cataratas",
+      "city": "Foz do Iguaçu",
+      "availableDate": "2023-08-01",
+      "price": 1500,
+      "rating": "9.5",
+      "ratingText": "Excepcional · 4.123 avaliações"
+    },
+    {
+      "id": 4,
+      "name": "Tivoli Mofarrej",
+      "city": "São Paulo",
+      "availableDate": "2023-07-18",
+      "price": 890,
+      "rating": "8.8",
+      "ratingText": "Excelente · 3.048 avaliações"
+    },
+    {
+      "id": 5,
+      "name": "Emiliano Hotel",
+      "city": "Rio de Janeiro",
+      "availableDate": "2023-07-25",
+      "price": 1300,
+      "rating": "9.1",
+      "ratingText": "Excepcional · 2.892 avaliações"
+    },
+    {
+      "id": 6,
+      "name": "Hotel Unique",
+      "city": "São Paulo",
+      "availableDate": "2023-08-05",
+      "price": 1100,
+      "rating": "9.0",
+      "ratingText": "Excepcional · 3.204 avaliações"
+    },
+    {
+      "id": 7,
+      "name": "Grand Hyatt",
+      "city": "Rio de Janeiro",
+      "availableDate": "2023-07-30",
+      "price": 1000,
+      "rating": "8.7",
+      "ratingText": "Excelente · 2.564 avaliações"
+    },
+    {
+      "id": 8,
+      "name": "Sheraton Grand Rio Hotel",
+      "city": "Rio de Janeiro",
+      "availableDate": "2023-08-10",
+      "price": 950,
+      "rating": "8.6",
+      "ratingText": "Excelente · 2.103 avaliações"
+    },
+    {
+      "id": 9,
+      "name": "Palácio Tangará",
+      "city": "São Paulo",
+      "availableDate": "2023-08-15",
+      "price": 1600,
+      "rating": "9.4",
+      "ratingText": "Excepcional · 3.567 avaliações"
+    },
+    {
+      "id": 10,
+      "name": "Casa Grande Hotel",
+      "city": "Guarujá",
+      "availableDate": "2023-08-20",
+      "price": 850,
+      "rating": "8.5",
+      "ratingText": "Excelente · 2.231 avaliações"
+    }
+  ]
+}
