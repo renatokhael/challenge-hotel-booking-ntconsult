@@ -3,7 +3,7 @@
     <div class="search-bar">
       <div class="input-group">
         <label for="destination" class="icon">
-          <i class="fas fa-search"></i>
+          <i class="fas fa-map-marker"></i>
         </label>
         <select id="destination" v-model="destination">
           <option value="">Selecione um destino</option>
@@ -13,7 +13,7 @@
       </div>
       <div class="input-group">
         <label for="checkin" class="icon">
-          <i class="fas fa-calendar-alt"></i>
+          <i class="fas fa-calendar"></i>
         </label>
         <input
           type="text"
@@ -25,7 +25,7 @@
       </div>
       <div class="input-group">
         <label for="checkout" class="icon">
-          <i class="fas fa-calendar-alt"></i>
+          <i class="fas fa-calendar"></i>
         </label>
         <input
           type="text"

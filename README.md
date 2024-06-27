@@ -1,81 +1,92 @@
 # Desafio Front-End Vue.js - Hotel Booking
 
-This template should help get you started developing with Vue 3 in Vite.
+Esta é uma aplicação desenvolvida usando Vue.js, para simular parte do sistema de reserva de hotéis. O foco é implementar uma interface funcional que permita pesquisar, comparar e reservar hotéis.
 
-## Recommended IDE Setup
+<img src=".github/screenshot.png">
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Conteúdo
 
-## Type Support for `.vue` Imports in TS
+- [Requisitos](#requisitos)
+- [Funcionalidades](#funcionalidades)
+- [Rodar localmente](#uso)
+- [Testes](#testes)
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Requisitos
 
-## Customize configuration
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (desabilite o Vetur).
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Node: 20.14.0
 
-## Rodando a aplicação local
+## Funcionalidades
 
-Baixe o repositório
+- [x] Deve pesquisar Hotéis com critérios como destino, data de check-in, checkout e números de quarto e hospedes.
+- [x] Deve exibir os resultados lista ordenada por preço, avaliações e outros critérios relevantes
+- [x] Deve permitir que o usuário selecione múltiplos hotéis dos resultados de busca para comparar suas características lado a lado.
+- [x] Deve ter um formulário para reservar um quarto em um hotel selecionado, solicitando informações como nome do usuário, contato e detalhes de pagamento
+- [ ] Deve ter um mecanismo de notificação que informe ao usuário sobre o status de sua reserva.
+
+## Uso
+
+### Baixe o repositório
 
 ```
 git clone https://github.com/renatokhael/challenge-hotel-booking-ntconsult
 ```
 
-Instale as dependencias
+### Instale as dependencias
 
 ```
 npm install
 ```
 
-Rode o servidor mock
+### Inicie o servidor mock (json-server)
 
 ```
 npm run server
 ```
 
-E por fim, rode a aplicação
+Ao iniciar o servidor, o Endpoint deve rodar no endereço: `http://localhost:3000/`
+
+### Inicie a aplicação
 
 ```
 npm run dev
 ```
 
-### Compile and Hot-Reload for Development
+A aplicação deve rodar no endereço: `http://localhost:5173/`
 
-```sh
-npm run dev
+### Compilar e fazer minificação para produção
+
 ```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Inicie os testes unitários usando [Vitest](https://vitest.dev/)
 
-```sh
+## Testes
+
+```
 npm run test:unit
 ```
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+### Rode o teste e2e usando [Cypress](https://www.cypress.io/)
 
-```sh
+```
 npm run test:e2e:dev
 ```
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+## Contribuição
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+Contribuições são bem-vindas! Siga estas etapas para contribuir:
 
-```sh
-npm run build
-npm run test:e2e
-```
+- Bifurque o projeto.
+- Crie sua branch de recursos: `git checkout -b feature/my-new-feature`.
+- Confirme suas alterações: `git commit -am 'Adicionar algum recurso`'.
+- Envie para o branch: `git push origin feature/my-new-feature`.
+- Envie uma solicitação pull.
 
-### Lint with [ESLint](https://eslint.org/)
+## License
 
-```sh
-npm run lint
-```
+Esse é um projeto pessoal, e pode ser utilizado, copiado sem aviso prévio.
+
+Made with 💚 by [Renato Khael](https://renatokhael.dev)
