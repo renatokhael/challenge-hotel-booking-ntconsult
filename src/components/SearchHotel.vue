@@ -64,7 +64,7 @@ const destination = ref('')
 const checkin = ref('')
 const checkout = ref('')
 const guests = ref('2 hóspedes, 1 quarto')
-const cities = ref([])
+const cities = ref<string[]>([])
 const showModal = ref(false)
 
 const hotelStore = useHotelStore()
@@ -74,7 +74,7 @@ const fetchCities = async () => {
     const response = await axios.get('http://localhost:3000/hotels')
     const hotels = response.data
     hotelStore.setHotels(hotels) // Atualizando a store com a lista de hotéis
-    const uniqueCities = [...new Set(hotels.map((hotel) => hotel.city))]
+    const uniqueCities = [...new Set(hotels.map((hotel: any) => hotel.city))] as string[]
     cities.value = uniqueCities
   } catch (error) {
     console.error('Error fetching cities:', error)
