@@ -45,9 +45,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useHotelStore } from '@/stores/useHotelStore'
+import type { Hotel } from '@/types/Hotel'
 
 const hotelStore = useHotelStore()
-const hotel = ref(hotelStore.hotelForBooking)
+const hotel = ref<Hotel | null>(hotelStore.hotelForBooking)
 const userName = ref('')
 const userContact = ref('')
 const cardNumber = ref('')
@@ -55,6 +56,11 @@ const expiryDate = ref('')
 const cvv = ref('')
 
 const submitBooking = () => {
+  if (!hotel.value) {
+    console.error('Hotel não está disponível')
+    return
+  }
+
   const bookingDetails = {
     hotelId: hotel.value.id,
     userName: userName.value,

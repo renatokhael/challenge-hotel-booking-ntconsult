@@ -48,16 +48,17 @@
           readonly
         />
       </div>
-      <button class="search-btn">Pesquisar</button>
+      <button class="search-btn" @click="searchHotels">Pesquisar</button>
     </div>
     <ModalBooking v-if="showModal" @close="closeModal" @submit="handleModalSubmit" />
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import ModalBooking from './ModalBooking.vue'
+import { useHotelStore } from '@/stores/useHotelStore'
 
 const destination = ref('')
 const checkin = ref('')
@@ -66,10 +67,13 @@ const guests = ref('2 hóspedes, 1 quarto')
 const cities = ref([])
 const showModal = ref(false)
 
+const hotelStore = useHotelStore()
+
 const fetchCities = async () => {
   try {
     const response = await axios.get('http://localhost:3000/hotels')
     const hotels = response.data
+    hotelStore.setHotels(hotels) // Atualizando a store com a lista de hotéis
     const uniqueCities = [...new Set(hotels.map((hotel) => hotel.city))]
     cities.value = uniqueCities
   } catch (error) {
@@ -81,7 +85,7 @@ const clearDestination = () => {
   destination.value = ''
 }
 
-const formatDateInput = (field) => {
+const formatDateInput = (field: 'checkin' | 'checkout') => {
   const date = ref(field === 'checkin' ? checkin.value : checkout.value)
   let formattedDate = date.value.replace(/[^0-9]/g, '')
 
@@ -106,9 +110,13 @@ const closeModal = () => {
   showModal.value = false
 }
 
-const handleModalSubmit = (selectedGuests, selectedRooms) => {
+const handleModalSubmit = (selectedGuests: number, selectedRooms: number) => {
   guests.value = `${selectedGuests} hóspedes, ${selectedRooms} quartos`
   closeModal()
+}
+
+const searchHotels = () => {
+  hotelStore.filterHotelsByCity(destination.value)
 }
 
 onMounted(() => {
@@ -174,10 +182,15 @@ onMounted(() => {
 
 @media (max-width: 768px) {
   .search-bar {
-    flex-direction: column;
+    display: block;
   }
 
   .input-group {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .search-btn {
     width: 100%;
   }
 }

@@ -5,7 +5,9 @@ import type { Hotel } from '@/types/Hotel'
 export const useHotelStore = defineStore('hotelStore', {
   state: () => ({
     selectedHotels: [] as Hotel[],
-    hotelForBooking: null as Hotel | null
+    hotelForBooking: null as Hotel | null,
+    hotels: [] as Hotel[], // Adicionando o estado para a lista de hotéis
+    filteredHotels: [] as Hotel[] // Adicionando o estado para os hotéis filtrados
   }),
   actions: {
     addHotel(hotel: Hotel) {
@@ -22,6 +24,16 @@ export const useHotelStore = defineStore('hotelStore', {
     },
     clearHotelForBooking() {
       this.hotelForBooking = null
+    },
+    setHotels(hotels: Hotel[]) {
+      this.hotels = hotels
+    },
+    filterHotelsByCity(city: string) {
+      if (city) {
+        this.filteredHotels = this.hotels.filter((hotel) => hotel.city === city)
+      } else {
+        this.filteredHotels = this.hotels
+      }
     }
   }
 })

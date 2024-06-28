@@ -14,7 +14,7 @@
       </div>
     </header>
 
-    <div v-if="hotels.length" class="hotel-list">
+    <div v-if="filteredHotels.length" class="hotel-list">
       <HotelCard v-for="hotel in sortedHotels" :key="hotel.id" :hotel="hotel" />
     </div>
     <div v-else>
@@ -35,15 +35,16 @@ import { useHotelStore } from '@/stores/useHotelStore'
 const hotelStore = useHotelStore()
 const router = useRouter()
 
-const hotels = ref<Hotel[]>([])
 const sortCriteria = ref<'price' | 'rating'>('price') // Critério de ordenação padrão
 
 const selectedHotelsCount = computed(() => hotelStore.selectedHotels.length)
+const filteredHotels = computed(() => hotelStore.filteredHotels)
 
 const fetchHotels = async () => {
   try {
     const response = await axios.get('http://localhost:3000/hotels')
-    hotels.value = response.data
+    hotelStore.setHotels(response.data)
+    hotelStore.filterHotelsByCity('') // Inicializando com todos os hotéis
   } catch (error) {
     console.error('Erro ao buscar dados dos hotéis:', error)
   }
@@ -51,7 +52,7 @@ const fetchHotels = async () => {
 
 // Computed property para ordenar os hotéis com base no critério selecionado
 const sortedHotels = computed<Hotel[]>(() => {
-  return [...hotels.value].sort((a, b) => {
+  return [...filteredHotels.value].sort((a, b) => {
     if (sortCriteria.value === 'price') {
       return a.price - b.price
     } else if (sortCriteria.value === 'rating') {
@@ -87,6 +88,13 @@ watch(sortCriteria, fetchHotels)
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .button-compare {
+    max-width: 100%;
+    margin-right: 7rem;
+  }
 }
 
 .compare {

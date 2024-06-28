@@ -61,6 +61,13 @@ const goToBookingPage = () => {
   transition: transform 0.3s;
 }
 
+@media (max-width: 768px) {
+  .hotel-card {
+    max-width: 100%;
+    margin: 15px;
+  }
+}
+
 .hotel-image {
   width: 100%;
   height: auto;
